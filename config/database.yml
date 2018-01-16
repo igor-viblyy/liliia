@@ -82,5 +82,4 @@ production:
   <<: *default
   database: liliia
   username: postgres
-  # password: <%= ENV['LILIIA_DATABASE_PASSWORD'] %>
-  password: liliya2018
+  password: <%= ENV['LILIIA_DATABASE_PASSWORD'] %>
