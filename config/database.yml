@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: liliia
-  username: postgres
+  username: liliya
   password: <%= ENV['LILIIA_DATABASE_PASSWORD'] %>
