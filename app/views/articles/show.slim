@@ -1,0 +1,10 @@
+.container
+  .row
+    .col-12
+      h4
+        strong
+         =@article.title
+      div
+        = @article.body.html_safe
+
+      =render 'disqus'

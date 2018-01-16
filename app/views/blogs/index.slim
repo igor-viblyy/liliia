@@ -1,0 +1,14 @@
+.container
+  .row
+    .col-12
+      - @blogs.each do |blog|
+        .jumbotron.jumbotron-fluid
+          .col-8
+            .row
+              p.category =blog.category.name
+              p.article-date
+                = blog.created_at.to_formatted_s(:long)
+            .row
+              h5
+                strong
+                  = link_to blog.title, blog_path(blog.id)

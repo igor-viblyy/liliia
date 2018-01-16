@@ -1,0 +1,18 @@
+.container
+  .row
+    .col-12
+      - @articles.each do |article|
+        .jumbotron.jumbotron-fluid
+          .col-8
+            .row
+              p.category =article.category.name
+
+              p.article-date
+                = article.created_at.to_formatted_s(:long)
+            .row
+              h5
+                strong
+                  = link_to article.title, article_path(article.id)
+
+          .col.align-self-end
+            = image_tag(article.image.url, size: '115', class: 'rounded float-right article-image')

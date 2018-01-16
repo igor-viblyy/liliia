@@ -1,0 +1,9 @@
+.container
+  .row
+    .col-12
+      - @abouts.each do |about|
+        h4
+          strong
+           =about.title
+        div
+          = about.body.html_safe

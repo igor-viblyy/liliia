@@ -1,0 +1,26 @@
+doctype html
+html
+  head
+    title HealthBlog
+    = csrf_meta_tags
+    link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans"
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+
+  body
+    .container-fluid
+      .row
+        .col-12
+          = render 'layouts/partials/top_baner'
+          = render 'layouts/partials/top_menu'
+          = render 'layouts/partials/menu'
+
+    .container-fluid
+      .row
+        .col-12
+          .main
+            == yield
+      .row
+        .col-12
+          = render 'layouts/partials/footer'

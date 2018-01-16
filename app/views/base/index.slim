@@ -1,0 +1,59 @@
+.row
+  .col-9.col-sm
+    .col-12
+      .row
+      - @articles.each do |article|
+        .jumbotron.jumbotron-fluid
+          .col-8
+            .row
+              p.category =article.category.name
+
+              p.article-date
+                = article.created_at.to_formatted_s(:long)
+            .row
+              h5
+                strong
+                  = link_to article.title, article_path(article.id)
+
+          .col.align-self-end
+            = image_tag(article.image.url, size: '115', class: 'rounded float-right article-image')
+
+
+    .col-12
+      hr
+      .row
+      - @blogs.each do |blog|
+        .jumbotron.jumbotron-fluid
+          .col-8
+            .row
+              p.category =blog.category.name
+
+              p.article-date
+                = blog.created_at.to_formatted_s(:long)
+            .row
+              h5
+                strong
+                  = link_to blog.title, blog_path(blog.id)
+
+    .col-12.events
+      hr
+      -@events.each do |event|
+        .jumbotron.jumbotron-fluid
+          .col-12
+            .row
+              .col-2
+                h4
+                  strong
+                    = link_to event.title, event_path(event.id)
+              .col-4
+                p.article-date
+                  = event.created_at.to_formatted_s(:long)
+              .col-10
+                p.lead
+                  = truncate_html(event.body.html_safe, length: 320)
+
+  .col-3
+    - @adverts_right.each do |advert|
+      .card
+        .card-body.bg-dark.text-center.text-white
+          = image_tag(advert.image.url(:thumb), class: 'card-img')

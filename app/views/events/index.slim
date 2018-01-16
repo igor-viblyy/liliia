@@ -1,0 +1,12 @@
+.container
+  .row
+    .col-12
+      - @events.each do |event|
+        .jumbotron.jumbotron-fluid
+          .col-8
+            .row
+              h5
+                strong
+                  = link_to event.title, event_path(event.id)
+            .row
+              p=event.body.html_safe

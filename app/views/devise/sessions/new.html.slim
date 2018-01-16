@@ -1,0 +1,31 @@
+.container
+  .row
+    .col-3
+    .col-6
+      .card.mb-3 style="max-width: 30rem; margin-top: 70px;"
+        .card-header.text-white.text-center.bg-success
+          h4 Log in
+
+        .card-body
+          = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+            = f.error_notification
+            .form-group
+              = f.input :email, required: false, autofocus: true, label: false, placeholder: 'E-mail', input_html: { class: 'form-control' }
+
+            .form-group
+              = f.input :password, required: false, label: false, placeholder: 'Password', input_html: { class: 'form-control' }
+
+            .form-check
+              label.form-check-label
+                = f.input :remember_me, as: :boolean, input_html: { class: 'form-check-input' } if devise_mapping.rememberable?
+
+            .form-group
+              = f.button :submit, "Log in", class: 'btn btn-block btn-success'
+
+            .form-group
+              = link_to 'Facebook', user_facebook_omniauth_authorize_path, role: 'button', class: 'btn btn-block btn-primary'
+
+            .form-group
+              = link_to "Google", user_google_oauth2_omniauth_authorize_path, role: 'button', class: 'btn btn-block btn-danger'
+            .form-group
+              = link_to 'Instagram', user_instagram_omniauth_authorize_path, role: 'button', class: 'btn btn-block btn-light'
