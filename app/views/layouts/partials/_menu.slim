@@ -47,13 +47,13 @@ nav#header.navbar.navbar-expand-lg.navbar-light.bg-light.container-fluid
     ul.navbar-nav
       li.nav-item
         a.navabar-brand href="#"
-          = image_tag 'social-icons/facebook', class: 'rounded mt-2 social-img'
+          = image_tag 'social-icons/facebook.png', class: 'rounded mt-2 social-img'
       li.nav-item
         a.navabar-brand href="#"
-          = image_tag 'social-icons/instagram', class: 'rounded mt-2 social-img'
+          = image_tag 'social-icons/instagram.png', class: 'rounded mt-2 social-img'
       li.nav-item
         a.navabar-brand href="#"
-          =image_tag 'social-icons/google-plus', class: 'rounded mt-2 social-img'
+          =image_tag 'social-icons/google-plus.png', class: 'rounded mt-2 social-img'
 
       - if user_signed_in?
         li.nav-item
@@ -64,7 +64,7 @@ nav#header.navbar.navbar-expand-lg.navbar-light.bg-light.container-fluid
       - else
         li.nav-item.dropdown
             a.nav-link.dropdown-toggle href="#" id="navbarDropdownUser" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-              =image_tag 'social-icons/avatar'
+              =image_tag 'social-icons/avatar.png'
 
             .dropdown-menu.dropdown-menu-right aria-labelledby="navbarDropdownUser"
               = link_to "Log in", new_user_session_path, role: 'button', class: 'dropdown-item text-center'
