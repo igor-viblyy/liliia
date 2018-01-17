@@ -88,6 +88,8 @@ gem 'jquery-rails'
 gem 'paperclip', "~> 5.0.0"
 gem 'rmagick'
 
+gem 'listen', '>= 3.0.5', '< 3.2'
+
 group :production do
   gem 'therubyracer'
   gem 'execjs'
