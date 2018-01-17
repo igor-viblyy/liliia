@@ -49,7 +49,7 @@ group :development do
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'annotate'
-  gem 'awesome_print', require: 'ap'
+  # gem 'awesome_print', require: 'ap'
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false
 
