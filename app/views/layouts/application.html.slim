@@ -3,7 +3,7 @@ html
   head
     title HealthBlog
     = csrf_meta_tags
-    link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans"
+    link href="https://fonts.googleapis.com/css?family=Inconsolata|Noto+Sans|Open+Sans|Roboto|Source+Sans+Pro" rel="stylesheet"
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
@@ -13,7 +13,6 @@ html
       .row
         .col-12
           = render 'layouts/partials/top_baner'
-          = render 'layouts/partials/top_menu'
           = render 'layouts/partials/menu'
 
     .container-fluid

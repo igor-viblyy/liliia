@@ -1,12 +1,25 @@
+.col-12
+  .row
+    .col-6.col-sm
+      .interesting-block
+        .header
+          h4.text-center
+            strong Цікавинки
+
+
+    .col-6
+      =image_tag('test.jpg', width: 700, class: 'img-fluid')
+
+div style="padding-bottom:20px;"
 .row
-  .col-9.col-sm
+  .col-8.col-sm
     .col-12
       .row
       - @articles.each do |article|
         .jumbotron.jumbotron-fluid
           .col-8
             .row
-              p.category =article.category.name
+              =link_to article.category.name, category_path(article.category.id), class: 'category'
 
               p.article-date
                 = article.created_at.to_formatted_s(:long)
@@ -52,8 +65,15 @@
                 p.lead
                   = truncate_html(event.body.html_safe, length: 320)
 
-  .col-3
-    - @adverts_right.each do |advert|
-      .card
-        .card-body.bg-dark.text-center.text-white
-          = image_tag(advert.image.url(:thumb), class: 'card-img')
+  .col-4
+    -if @adverts_right.present?
+      - @adverts_right.each do |advert|
+        .row
+          = image_tag(advert.image.url(:thumb), class: 'image-fluid pad')
+    -else
+      .row
+        = image_tag('test.jpg', height: 200, class: 'img-fluid pad')
+      .row
+        = image_tag('test.jpg', height: 200, class: 'img-fluid pad')
+      .row
+        = image_tag('test.jpg', height: 200, class: 'img-fluid pad')

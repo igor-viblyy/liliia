@@ -6,5 +6,7 @@ class BaseController < ApplicationController
     @events = Event.all
     @blogs = Blog.all
     @adverts_right = Advertising.right
+    # @categories = Category.all
+    # @category = @categories.article.all
   end
 end

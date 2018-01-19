@@ -17,17 +17,38 @@ footer {
   }
 }
 
-.top-menu {
-  background-color: #FBFCFC;
-  border: 1px solid #ddd;
-  // border-top-left-radius: 8px;
-  // border-top-right-radius: 8px;
+.top-baner {
+  height: 140px;
+
+  .position {
+    margin: 30px auto;
+  }
 }
 
 .main {
   background-color: #fff;
   padding-top: 20px;
+
+  .interesting-block {
+    min-height: 300px;
+    border: 5px solid #CCC;
+
+    .header {
+      width: 120px;
+      position: relative;
+      background-color: #fff;
+      top: -18px;
+      left: 18px;
+    }
+  }
+
+  .pad {
+    padding-bottom: 10px;
+  }
 }
+
+
+
 
 #header {
   background: #fff;
