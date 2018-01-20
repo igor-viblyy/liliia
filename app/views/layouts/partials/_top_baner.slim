@@ -1,7 +1,5 @@
 .top-baner
   .container
     .card.bg-dark.text-white.position
-      = image_tag('test.jpg', height: '100', class: 'card-img')
-      .card-img-overlay
-        blockquote.blockquote.text-center
-          p.mb-0 Тут може бути ваша реклама
+      -@adverts_top.each do |advert_top|
+        = image_tag(advert_top.image.url, height: '100', class: 'card-img')

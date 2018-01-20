@@ -3,9 +3,16 @@
     .col-6.col-sm
       .interesting-block
         .header
-          h4.text-center
-            strong Цікавинки
+          h5.text-center
+            | Цікавинки
+        .col-12
+          -@interesting.each do |article_interest|
+            .body
+              h5
+                strong
+                  = link_to article_interest.title, article_path(article_interest.id)
 
+              = link_to article_interest.category.name, category_path(article_interest.category.id), class: 'interesting-category'
 
     .col-6
       =image_tag('test.jpg', width: 700, class: 'img-fluid')
@@ -22,7 +29,7 @@ div style="padding-bottom:20px;"
               =link_to article.category.name, category_path(article.category.id), class: 'category'
 
               p.article-date
-                = article.created_at.to_formatted_s(:long)
+                = l(article.created_at, format: :long)
             .row
               h5
                 strong
@@ -42,7 +49,7 @@ div style="padding-bottom:20px;"
               p.category =blog.category.name
 
               p.article-date
-                = blog.created_at.to_formatted_s(:long)
+                = l(blog.created_at, format: :long)
             .row
               h5
                 strong
@@ -60,20 +67,20 @@ div style="padding-bottom:20px;"
                     = link_to event.title, event_path(event.id)
               .col-4
                 p.article-date
-                  = event.created_at.to_formatted_s(:long)
+                  = l(event.created_at, format: :long)
               .col-10
                 p.lead
                   = truncate_html(event.body.html_safe, length: 320)
 
   .col-4
     -if @adverts_right.present?
+
       - @adverts_right.each do |advert|
-        .row
-          = image_tag(advert.image.url(:thumb), class: 'image-fluid pad')
+        = image_tag(advert.image.url, size: 450 ,class: 'image-fluid pad')
+
     -else
-      .row
-        = image_tag('test.jpg', height: 200, class: 'img-fluid pad')
-      .row
-        = image_tag('test.jpg', height: 200, class: 'img-fluid pad')
-      .row
-        = image_tag('test.jpg', height: 200, class: 'img-fluid pad')
+      = image_tag('test.jpg', height: 200, class: 'img-fluid pad')
+
+      = image_tag('test.jpg', height: 200, class: 'img-fluid pad')
+
+      = image_tag('test.jpg', height: 200, class: 'img-fluid pad')

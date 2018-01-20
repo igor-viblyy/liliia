@@ -31,7 +31,8 @@ footer {
 
   .interesting-block {
     min-height: 300px;
-    border: 5px solid #CCC;
+    border: 5px solid #F7F8F9;
+
 
     .header {
       width: 120px;
@@ -39,6 +40,17 @@ footer {
       background-color: #fff;
       top: -18px;
       left: 18px;
+    }
+
+    .body {
+      padding-bottom: 30px;
+      line-height: 0.5;
+    }
+
+    .interesting-category {
+      font-size: 11px;
+      color: #000;
+      text-decoration: underline;
     }
   }
 

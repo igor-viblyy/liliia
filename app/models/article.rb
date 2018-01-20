@@ -12,6 +12,7 @@
 #  image_file_size    :integer
 #  image_updated_at   :datetime
 #  category_id        :integer
+#  interesting        :boolean
 #
 
 class Article < ApplicationRecord
@@ -23,4 +24,5 @@ class Article < ApplicationRecord
   validates :title, :body, presence: true
 
   scope :top_article, ->(time) { where("updated_at < ?", time).limit(10) }
+  scope :interesting, -> { where(interesting: true) }
 end

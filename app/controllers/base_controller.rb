@@ -3,10 +3,13 @@ class BaseController < ApplicationController
 
   def index
     @articles = Article.top_article(Time.now)
+    @interesting = Article.interesting
+
     @events = Event.all
+
     @blogs = Blog.all
+
     @adverts_right = Advertising.right
-    # @categories = Category.all
-    # @category = @categories.article.all
+    @adverts_top = Advertising.top
   end
 end

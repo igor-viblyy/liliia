@@ -21,6 +21,6 @@ class Advertising < ApplicationRecord
 
   validates :title, presence: true
 
-  scope :right, -> { where(position_right: true) }
-  scope :top, -> { where(position_top: true) }
+  scope :right, -> { where(position_right: true).limit(3) }
+  scope :top, -> { where(position_top: true).limit(1) }
 end
