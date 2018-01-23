@@ -71,6 +71,8 @@ gem 'omniauth-facebook'
 gem 'omniauth-instagram'
 gem 'omniauth-google-oauth2'
 
+gem 'rails-observers'
+gem 'yt', '~> 0.28.0'
 gem 'simple_form'
 
 gem 'truncate_html'
@@ -78,7 +80,6 @@ gem 'tinymce-rails'
 gem 'tinymce-rails-imageupload', github: 'PerfectlyNormal/tinymce-rails-imageupload'
 
 gem 'closure_tree'
-# gem 'ancestry'
 gem 'activeadmin'
 gem 'activeadmin_tinymce'
 

@@ -1,6 +1,7 @@
-class ArticlesController < ApplicationController
+class ArticlesController < BaseController
   def index
     @articles = Article.all
+    @adverts_right = Advertising.right
   end
 
   def show

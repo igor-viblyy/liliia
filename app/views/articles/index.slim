@@ -1,6 +1,6 @@
-.container
+.col-12
   .row
-    .col-12
+    .col-8
       - @articles.each do |article|
         .jumbotron.jumbotron-fluid
           .col-8
@@ -16,3 +16,7 @@
 
           .col.align-self-end
             = image_tag(article.image.url, size: '115', class: 'rounded float-right article-image')
+
+    .col-4
+      - @adverts_right.each do |advert|
+        = image_tag(advert.image.url, size: 450 ,class: 'image-fluid pad')

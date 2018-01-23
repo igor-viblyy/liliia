@@ -1,7 +1,7 @@
 ActiveAdmin.register Advertising do
   menu label: 'Реклама'
 
-  permit_params [:title, :position_top, :position_right, :image_file_name, :image_file_size, :image_updated_at, :image_content_type, :image, :url]
+  permit_params [:title, :position_top, :position_right, :top_big, :image_file_name, :image_file_size, :image_updated_at, :image_content_type, :image, :url]
 
   index do
     id_column
@@ -13,6 +13,7 @@ ActiveAdmin.register Advertising do
     column :image_updated_at
     column :position_top
     column :position_right
+    column :top_big
     column :url
     actions
   end
@@ -27,6 +28,7 @@ ActiveAdmin.register Advertising do
       row :image_updated_at
       row :position_top
       row :position_right
+      row :top_big
       row :url
     end
   end
@@ -38,6 +40,7 @@ ActiveAdmin.register Advertising do
       f.input :url
       f.input :position_top, as: :boolean
       f.input :position_right, as: :boolean
+      f.input :top_big, as: :boolean
     end
     f.actions
   end

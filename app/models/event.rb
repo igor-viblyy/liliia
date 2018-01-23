@@ -10,4 +10,5 @@
 #
 
 class Event < ApplicationRecord
+  scope :index_event, ->(date) { where("created_at < ?", date).limit(10) }
 end

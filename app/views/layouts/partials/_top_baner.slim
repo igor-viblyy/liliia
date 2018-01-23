@@ -1,5 +1,8 @@
 .top-baner
   .container
+    - adverts_top = Advertising.top
     .card.bg-dark.text-white.position
-      -@adverts_top.each do |advert_top|
+      / -@adverts_top.each do |advert_top|
+      /   = image_tag(advert_top.image.url, height: '100', class: 'card-img')
+      - adverts_top.each do |advert_top|
         = image_tag(advert_top.image.url, height: '100', class: 'card-img')

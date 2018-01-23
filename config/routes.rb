@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'video/index'
+
+  resources :videos
   resources :categories
   resource :contacts
 
@@ -10,7 +13,7 @@ Rails.application.routes.draw do
   resources :images
   resources :adverts
   resources :articles
-  
+
   resources :categories do
     resources :articles
     resources :blogs

@@ -31,8 +31,8 @@ footer {
 
   .interesting-block {
     min-height: 300px;
-    border: 5px solid #F7F8F9;
-
+    // border: 5px solid #F7F8F9;
+    border: 5px solid #CCC;
 
     .header {
       width: 120px;
@@ -56,6 +56,17 @@ footer {
 
   .pad {
     padding-bottom: 10px;
+  }
+}
+
+.blog {
+  background-color: #F8F9FA;
+  min-height: 350px;
+  padding: 10px;
+
+  .blog-card {
+    width: 20rem;
+    min-height: 400px;
   }
 }
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180119213533) do
+ActiveRecord::Schema.define(version: 20180123003930) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 20180119213533) do
     t.string "image_content_type"
     t.integer "image_file_size"
     t.datetime "image_updated_at"
+    t.boolean "top_big"
   end
 
   create_table "articles", force: :cascade do |t|
@@ -86,6 +87,10 @@ ActiveRecord::Schema.define(version: 20180119213533) do
     t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
     t.index ["category_id"], name: "index_blogs_on_category_id"
   end
 
@@ -126,6 +131,18 @@ ActiveRecord::Schema.define(version: 20180119213533) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "videos", force: :cascade do |t|
+    t.string "link"
+    t.string "title"
+    t.datetime "published_at"
+    t.integer "likes"
+    t.integer "dislikes"
+    t.string "uid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["uid"], name: "index_videos_on_uid"
   end
 
 end

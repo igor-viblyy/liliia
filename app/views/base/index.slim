@@ -13,9 +13,12 @@
                   = link_to article_interest.title, article_path(article_interest.id)
 
               = link_to article_interest.category.name, category_path(article_interest.category.id), class: 'interesting-category'
+            hr
 
     .col-6
-      =image_tag('test.jpg', width: 700, class: 'img-fluid')
+      - @adverts_big.each do |big|
+        =image_tag(big.image.url, width: 700, class: 'img-fluid')
+
 
 div style="padding-bottom:20px;"
 .row
@@ -39,22 +42,6 @@ div style="padding-bottom:20px;"
             = image_tag(article.image.url, size: '115', class: 'rounded float-right article-image')
 
 
-    .col-12
-      hr
-      .row
-      - @blogs.each do |blog|
-        .jumbotron.jumbotron-fluid
-          .col-8
-            .row
-              p.category =blog.category.name
-
-              p.article-date
-                = l(blog.created_at, format: :long)
-            .row
-              h5
-                strong
-                  = link_to blog.title, blog_path(blog.id)
-
     .col-12.events
       hr
       -@events.each do |event|
@@ -73,14 +60,28 @@ div style="padding-bottom:20px;"
                   = truncate_html(event.body.html_safe, length: 320)
 
   .col-4
-    -if @adverts_right.present?
+    - @adverts_right.each do |advert|
+      = image_tag(advert.image.url, size: 450 ,class: 'image-fluid pad')
+    h3.text-center Топ відео
+    - @videos.each do |video|
+      iframe src="https://www.youtube.com/embed/#{video.uid}" width="450" height="280" frameborder='0' allowfullscreen
 
-      - @adverts_right.each do |advert|
-        = image_tag(advert.image.url, size: 450 ,class: 'image-fluid pad')
-
-    -else
-      = image_tag('test.jpg', height: 200, class: 'img-fluid pad')
-
-      = image_tag('test.jpg', height: 200, class: 'img-fluid pad')
-
-      = image_tag('test.jpg', height: 200, class: 'img-fluid pad')
+.col-12
+  .blog
+    .row
+      - @blogs.each do |blog|
+        .col-3
+          .card.blog-card
+            =image_tag(blog.image.url, class: 'card-img-top img-fluid')
+            .card-body
+              .row
+                .col-8
+                  h5.card-title
+                    = link_to blog.title, blog_path(blog)
+                .col-4.category
+                  strong
+                    = blog.category.name
+              p.card-text
+                = truncate_html(blog.body)
+              p.card-text
+                =link_to 'Далі', blog_path(blog)

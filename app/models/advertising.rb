@@ -13,6 +13,7 @@
 #  image_content_type :string
 #  image_file_size    :integer
 #  image_updated_at   :datetime
+#  top_big            :boolean
 #
 
 class Advertising < ApplicationRecord
@@ -23,4 +24,5 @@ class Advertising < ApplicationRecord
 
   scope :right, -> { where(position_right: true).limit(3) }
   scope :top, -> { where(position_top: true).limit(1) }
+  scope :big, -> { where(top_big: true).limit(1) }
 end
