@@ -1,14 +1,23 @@
-.container
+.col-12
   .row
-    .col-12
-      - @blogs.each do |blog|
-        .jumbotron.jumbotron-fluid
-          .col-8
-            .row
-              p.category =blog.category.name
-              p.article-date
-                = blog.created_at.to_formatted_s(:long)
-            .row
-              h5
-                strong
-                  = link_to blog.title, blog_path(blog.id)
+    .col-8
+      .row
+        - @blogs.each do |blog|
+          .col
+            .card style="width: 18rem; margin: 0 0 20px 0;"
+              =image_tag(blog.image.url, class: 'card-img-top')
+              .card-body
+                .row
+                  .col-7
+                    h5.card-title
+                      = link_to blog.title, blog_path(blog)
+                  .col-5.category
+                    strong
+                      = blog.category.name
+                p.card-text
+                  = truncate_html(blog.body)
+                p.card-text
+                  =link_to 'Далі', blog_path(blog)
+    .col-4
+      - @adverts_right.each do |advert|
+        = image_tag(advert.image.url, size: 450 ,class: 'image-fluid pad')

@@ -7,5 +7,7 @@ class CategoriesController < BaseController
   def show
     @category = Category.find(params[:id])
     @category = @category.articles.all
+
+    @adverts_right = Advertising.right
   end
 end

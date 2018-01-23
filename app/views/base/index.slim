@@ -8,11 +8,18 @@
         .col-12
           -@interesting.each do |article_interest|
             .body
-              h5
-                strong
-                  = link_to article_interest.title, article_path(article_interest.id)
+              .row
+                .col-9
+                  h5
+                    strong
+                      = link_to article_interest.title, article_path(article_interest.id)
 
-              = link_to article_interest.category.name, category_path(article_interest.category.id), class: 'interesting-category'
+                  = link_to article_interest.category.name, category_path(article_interest.category.id), class: 'interesting-category'
+                  p
+                    =truncate_html(article_interest.body)
+
+                .col-3
+                  = image_tag(article_interest.image.url, size: '100', class: 'rounded img-fluid')
             hr
 
     .col-6

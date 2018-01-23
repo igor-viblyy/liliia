@@ -1,19 +1,26 @@
-.container
+.col-12
   .row
-    .col-12
-      -@category.each do |article|
-        .jumbotron.jumbotron-fluid
-          .col-8
-            .row
-              p.category =article.category.name
-              p.article-date
-                = article.created_at.to_formatted_s(:long)
-            .row
-              h5
-                strong
-                  = link_to article.title, article_path(article.id)
-            .row
-              p= article.body.html_safe
-
+    .col-8
+      .row
+        -@category.each do |article|
           .col
-            = image_tag(article.image.url, size: '115', class: 'rounded float-right article-image')
+            .card style="width: 18rem; margin: 0 0 20px 0;"
+              = image_tag(article.image.url, class: 'card-img-top')
+              .card-body
+                .row
+                  .col-7
+                    h5.card-title
+                      = link_to article.title, article_path(article)
+                  .col-5.category
+                    strong
+                      = article.category.name
+                p.card-text
+                  = truncate_html(article.body)
+                strong
+                  = l(article.created_at, format: :long)
+                p.card-text
+                  =link_to 'Далі', article_path(article)
+
+    .col-4
+      - @adverts_right.each do |advert|
+        = image_tag(advert.image.url, size: 450 ,class: 'image-fluid pad')
