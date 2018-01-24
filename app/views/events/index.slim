@@ -1,5 +1,5 @@
-.container
-  .row
+.row
+  .col-8
     .col-12
       - @events.each do |event|
         .jumbotron.jumbotron-fluid
@@ -8,5 +8,10 @@
               h5
                 strong
                   = link_to event.title, event_path(event.id)
+              p.article-date
+                = l(event.date, format: :long)
             .row
               p=event.body.html_safe
+  .col-4
+    - @adverts_right.each do |advert|
+      = image_tag(advert.image.url, size: 450 ,class: 'image-fluid pad')

@@ -4,7 +4,7 @@
       .row
         -@category.each do |article|
           .col
-            .card style="width: 18rem; margin: 0 0 20px 0;"
+            .card.card-articles
               = image_tag(article.image.url, class: 'card-img-top')
               .card-body
                 .row

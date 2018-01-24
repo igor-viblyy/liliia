@@ -1,6 +1,7 @@
 class EventsController < BaseController
   def index
     @events = Event.all
+    super
   end
 
   def show
