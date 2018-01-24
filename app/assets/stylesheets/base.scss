@@ -5,7 +5,7 @@ body {
 
 footer {
   background-color: #34495E;
-  height: 200px;
+  min-height: 200px;
 
   .footer-logo {
     margin: 50px 0 0 0;
@@ -14,6 +14,10 @@ footer {
   .footer-icon {
     background-color: #34495E;
     margin: 80px 10px 0 0;
+  }
+
+  .contacts {
+    margin: 90px 0 0 0;
   }
 }
 

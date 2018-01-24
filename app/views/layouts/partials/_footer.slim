@@ -1,12 +1,15 @@
 footer
-  .row
-    .col-12
-      .row
-        .col-4
-          = image_tag('logo.png', width: '220', height: '145', class: 'footer-logo')
-        .col-6
+  .col-12
+    .row
+      .col
+        = image_tag('logo.png', width: '220', height: '145', class: 'footer-logo')
+      .col-7
+      .col.text-center.text-white.contacts
+        h5 НАШІ КОНТАКТИ:
+        p
+          a href="mailto:info@liliia.com.ua" info@liliia.com.ua
 
-        .col-2
-          =image_tag('social-icons/facebook.png', class: 'img-thumbnail footer-icon')
-          =image_tag('social-icons/instagram.png', class: 'img-thumbnail footer-icon')
-          =image_tag('social-icons/google-plus.png', class: 'img-thumbnail footer-icon')
+    .row
+      .container
+        p.text-center.text-white
+          | &copy;2018, «Лілія». Використання матеріалів сайту лише за умови посилання (для інтернет-видань - гіперпосилання) на «Лілію».
