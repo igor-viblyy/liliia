@@ -1,12 +1,32 @@
 ActiveAdmin.register Blog do
   permit_params [:title, :body, :category_id, :image]
 
+  index do
+    id_column
+    column :title
+    column :image do |img|
+      image_tag(img.image.url(:thumb)) if img.image.present?
+    end
+    column 'body' do |b|
+      truncate_html(b.body)
+    end
+    actions
+  end
+
+  show do |bl|
+    attributes_table do
+      row :title
+      row :image do
+        image_tag(bl.image.url(:thumb)) if bl.image.present?
+      end
+    end
+  end
+
   form do |f|
-    f.inputs do
-      f.input :category
+    f.inputs 'blog' do
       f.input :title
       f.input :body
-      f.input :image, as: :file
+      f.input :image, as: :file, hint: image_tag(f.object.image.url(:thumb))
     end
     f.actions
   end
