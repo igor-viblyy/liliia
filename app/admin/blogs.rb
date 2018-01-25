@@ -19,6 +19,9 @@ ActiveAdmin.register Blog do
       row :image do
         image_tag(bl.image.url(:thumb)) if bl.image.present?
       end
+      row :body do
+        bl.body.html_safe
+      end
     end
   end
 
