@@ -1,7 +1,15 @@
 body {
-  @font-family: 'Noto Sans', sans-serif;
   background-color: #CCC !important;
 }
+
+.nav-item {
+  a {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+}
+
+
 
 footer {
   background-color: #34495E;
@@ -42,11 +50,6 @@ footer {
       left: 18px;
     }
 
-    .body {
-      padding-bottom: 30px;
-      line-height: 0.5;
-    }
-
     .interesting-category {
       font-size: 11px;
       color: #000;
@@ -65,8 +68,8 @@ footer {
   padding: 10px;
 
   .blog-card {
-    width: 20rem;
-    min-height: 400px;
+    width: 18rem;
+    min-height: 360px;
   }
 }
 
@@ -90,7 +93,7 @@ footer {
   font-family: 'Noto Sans', sans-serif;
   font-size: 8pt;
   color: #566573;
-  padding: 3px 0 0 25px;
+  padding: 6px 0 0 25px;
 }
 
 .article-image {

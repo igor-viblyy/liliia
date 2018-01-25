@@ -19,7 +19,7 @@
                     =truncate_html(article_interest.body)
 
                 .col-3
-                  = image_tag(article_interest.image.url, size: '100', class: 'rounded img-fluid')
+                  = image_tag(article_interest.image.url, class: 'rounded img-fluid')
             hr
 
     .col-6
@@ -34,19 +34,23 @@ div style="padding-bottom:20px;"
       .row
       - @articles.each do |article|
         .jumbotron.jumbotron-fluid
-          .col-8
-            .row
-              =link_to article.category.name, category_path(article.category.id), class: 'category'
+          .row
+            .col-10
+              .row
+                .col-1
+                  =link_to article.category.name, category_path(article.category.id), class: 'category'
+                .col-2
+                  p.article-date
+                    = l(article.created_at, format: :long)
 
-              p.article-date
-                = l(article.created_at, format: :long)
-            .row
               h5
                 strong
                   = link_to article.title, article_path(article.id)
+              p
+                =truncate_html(article.body, length: 130)
 
-          .col.align-self-end
-            = image_tag(article.image.url, size: '115', class: 'rounded float-right article-image')
+            .col-2
+              = image_tag(article.image.url, class: 'rounded img-fluid')
 
 
     .col-12.events
@@ -77,18 +81,16 @@ div style="padding-bottom:20px;"
   .blog
     .row
       - @blogs.each do |blog|
-        .col-3
+        .col-2
           .card.blog-card
             =image_tag(blog.image.url, class: 'card-img-top img-fluid')
             .card-body
-              .row
-                .col-8
-                  h5.card-title
-                    = link_to blog.title, blog_path(blog)
-                .col-4.category
-                  strong
-                    = blog.category.name
+              h5.card-title
+                = link_to blog.title, blog_path(blog)
+              .category
+                strong
+                  = blog.category.name
               p.card-text
-                = truncate_html(blog.body)
+                = truncate_html(blog.body, length: 40)
               p.card-text
                 =link_to 'Далі', blog_path(blog)

@@ -3,23 +3,21 @@
     .col-8
       .row
         -@category.each do |article|
-          .col
-            .card style="width: 18rem; margin: 0 0 20px 0;"
+          .col-2
+            .card style="width: 12rem; margin: 0 0 20px 0;"
               = image_tag(article.image.url, class: 'card-img-top')
               .card-body
-                .row
-                  .col-7
-                    h5.card-title
-                      = link_to article.title, article_path(article)
-                  .col-5.category
-                    strong
-                      = article.category.name
+                h5.card-title
+                  = link_to article.title, article_path(article)
+                .category
+                  strong
+                    = article.category.name
                 p.card-text
-                  = truncate_html(article.body)
-                strong
-                  = l(article.created_at, format: :long)
+                  = truncate_html(article.body, length: 40)
                 p.card-text
                   =link_to 'Далі', article_path(article)
+                strong.date
+                  = l(article.created_at, format: :long)
 
     .col-4
       - @adverts_right.each do |advert|

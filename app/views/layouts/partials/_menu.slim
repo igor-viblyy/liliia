@@ -6,8 +6,7 @@ nav#header.navbar.navbar-expand-lg.navbar-light.bg-light.container-fluid
   #navbarSupportedContent.collapse.navbar-collapse
     ul.navbar-nav.mr-auto.col-7
       li.nav-item.dropdown
-        a.nav-link.dropdown-toggle href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-          strong Рубрики
+        a.nav-link.dropdown-toggle href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 1.25rem;" Рубрики
 
         - categories = Category.all
         / - subcategories = categories.first.children
@@ -22,24 +21,19 @@ nav#header.navbar.navbar-expand-lg.navbar-light.bg-light.container-fluid
               /       = link_to ch.title, category_path(category.id), class:'dropdown-item', tabindex: -1
 
       li.nav-item
-        strong
-          = link_to 'Головна', root_path, class: 'nav-link'
+        = link_to 'Головна', root_path, class: 'nav-link'
 
       li.nav-item
-        strong
-          = link_to 'Про Нас', abouts_path, class: 'nav-link'
+        = link_to 'Про Нас', abouts_path, class: 'nav-link'
 
         li.nav-item
-          strong
-            = link_to 'Відео', videos_path, class: 'nav-link'
+          = link_to 'Відео', videos_path, class: 'nav-link'
 
       li.nav-item
-        strong
-          = link_to 'Події', events_path, class: 'nav-link'
+        = link_to 'Події', events_path, class: 'nav-link'
 
       li.nav-item
-        strong
-          = link_to 'Блог', blogs_path, class: 'nav-link'
+        = link_to 'Блог', blogs_path, class: 'nav-link'
 
     ul.navbar-nav
       li.nav-item
