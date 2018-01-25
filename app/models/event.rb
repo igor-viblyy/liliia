@@ -7,8 +7,10 @@
 #  body       :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  published  :boolean
+#  date       :datetime
 #
 
 class Event < ApplicationRecord
-  scope :index_event, ->(date) { where("created_at < ?", date).limit(10) }
+  scope :index_event, -> { where(published: true).limit(5) }
 end
