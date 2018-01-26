@@ -5,7 +5,7 @@
         -@category.each do |article|
           .col
             .card.card-articles
-              = image_tag(article.image.url, class: 'card-img-top')
+              = image_tag(article.image.url(:blog), class: 'card-img-top')
               .card-body
                 .category
                   strong

@@ -10,7 +10,7 @@
                 .category
                   strong
                     = event.company.name
-                h4.card-title
+                h5.card-title
                   = link_to truncate_html(event.title, length: 30), event_path(event)
                 .card-text
                   = truncate_html(event.body, length: 50)
