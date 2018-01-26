@@ -1,7 +1,7 @@
 class EventsController < BaseController
   def index
     @events = Event.all
-    super
+    @advertisings = Advertising.page_event
   end
 
   def show

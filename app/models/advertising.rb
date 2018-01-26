@@ -14,6 +14,9 @@
 #  image_file_size    :integer
 #  image_updated_at   :datetime
 #  top_big            :boolean
+#  page_event         :boolean
+#  page_blog          :boolean
+#  page_article       :boolean
 #
 
 class Advertising < ApplicationRecord
@@ -25,4 +28,7 @@ class Advertising < ApplicationRecord
   scope :right, -> { where(position_right: true).limit(3) }
   scope :top, -> { where(position_top: true).limit(1) }
   scope :big, -> { where(top_big: true).limit(1) }
+  scope :page_event, -> { where(page_event: true).limit(3) }
+  scope :page_blog, -> { where(page_blog: true).limit(3) }
+  scope :page_article, -> { where(page_article: true).limit(3) }
 end

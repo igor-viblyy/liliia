@@ -17,6 +17,17 @@
                   = truncate_html(blog.body)
                 p.card-text
                   =link_to 'Далі', blog_path(blog)
+
     .col-4
-      - @adverts_right.each do |advert|
-        = image_tag(advert.image.url, size: 450 ,class: 'image-fluid pad')
+      - if @adverts.present?
+        - @adverts.each do |advert|
+          = image_tag(advert.image.url, size: 450 ,class: 'image-fluid pad')
+      - else
+        .adverts-right-stub
+          h3.text-center тут може бути ваша реклама
+        br
+        .adverts-right-stub
+          h3.text-center тут може бути ваша реклама
+        br
+        .adverts-right-stub
+          h3.text-center тут може бути ваша реклама

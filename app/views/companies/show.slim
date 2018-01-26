@@ -21,3 +21,17 @@
                   .col-6
                     strong.date
                       =l(event.date, format: :long)
+
+    .col-4
+      - if @adverts.present?
+        - @adverts.each do |advert|
+          = image_tag(advert.image.url, size: 450 ,class: 'image-fluid pad')
+      - else
+        .adverts-right-stub
+          h3.text-center тут може бути ваша реклама
+        br
+        .adverts-right-stub
+          h3.text-center тут може бути ваша реклама
+        br
+        .adverts-right-stub
+          h3.text-center тут може бути ваша реклама

@@ -2,14 +2,18 @@
 #
 # Table name: events
 #
-#  id         :integer          not null, primary key
-#  title      :string
-#  body       :text
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  published  :boolean
-#  date       :datetime
-#  company_id :integer
+#  id                 :integer          not null, primary key
+#  title              :string
+#  body               :text
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#  published          :boolean
+#  date               :datetime
+#  company_id         :integer
+#  image_file_name    :string
+#  image_content_type :string
+#  image_file_size    :integer
+#  image_updated_at   :datetime
 #
 
 class Event < ApplicationRecord
