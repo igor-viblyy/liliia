@@ -15,7 +15,7 @@
                     strong
                       = link_to truncate_html(article_interest.title, length: 50), article_path(article_interest.id)
 
-                  =truncate_html(article_interest.body, length: 70)
+                  =truncate_html(article_interest.body, length: 50)
 
                 .col-3
                   = image_tag(article_interest.image.url, size: 120, class: 'rounded img-fluid')
