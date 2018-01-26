@@ -5,7 +5,7 @@
         - @events.each do |event|
           .col
             .card.card-articles
-              =image_tag(event.image.url, width: 294, height: 190, class: 'card-img-top img-fluid')
+              =image_tag(event.image.url(:blog), class: 'card-img-top img-fluid')
               .card-body
                 .category
                   strong
