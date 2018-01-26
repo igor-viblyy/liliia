@@ -1,7 +1,10 @@
 ActiveAdmin.register Advertising do
   menu label: 'Реклама'
 
-  permit_params [:title, :position_top, :position_right, :top_big, :image_file_name, :image_file_size, :image_updated_at, :image_content_type, :image, :url]
+  permit_params [:title, :position_top, :position_right,
+                 :top_big, :page_event, :page_blog,
+                 :page_article, :image_file_name, :image_file_size, :image_updated_at, :image_content_type, :image, :url
+                ]
 
   index do
     id_column
