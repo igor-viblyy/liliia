@@ -17,10 +17,10 @@
                 .card-text
                   = truncate_html(article.body, length: 50)
                 .row
-                  .col-6
+                  .col-5
                     p.card-text
                       =link_to 'Далі', article_path(article)
-                  .col-6
+                  .col-7
                     strong.date
                       = l(article.created_at, format: :long)
 

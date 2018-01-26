@@ -13,12 +13,12 @@
                 h4.card-title
                   = link_to truncate_html(event.title, length: 30), event_path(event)
                 .card-text
-                  = truncate_html(event.body)
+                  = truncate_html(event.body, length: 50)
                 .row
-                  .col-6
+                  .col-5
                     p.card-text
                       = link_to 'Далі', event_path(event)
-                  .col-6
+                  .col-7
                     strong.date
                       =l(event.date, format: :long)
 

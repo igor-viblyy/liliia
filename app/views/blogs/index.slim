@@ -14,7 +14,7 @@
                     h5.card-title
                       = link_to truncate_html(blog.title, length: 20), blog_path(blog)
                 .card-text
-                  = truncate_html(blog.body)
+                  = truncate_html(blog.body, length: 50)
                 p.card-text
                   =link_to 'Далі', blog_path(blog)
 
