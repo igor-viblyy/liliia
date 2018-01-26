@@ -11,11 +11,11 @@
                   strong
                     = article.category.name
 
-                h4.card-title
-                  = link_to truncate_html(article.title, length: 30), article_path(article)
+                h5.card-title
+                  = link_to truncate_html(article.title, length: 20), article_path(article)
 
                 .card-text
-                  = truncate_html(article.body)
+                  = truncate_html(article.body, length: 50)
                 .row
                   .col-6
                     p.card-text
