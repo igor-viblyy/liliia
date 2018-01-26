@@ -10,87 +10,101 @@
             .body
               .row
                 .col-9
+                  = link_to article_interest.category.name, category_path(article_interest.category.id), class: 'interesting-category'
                   h5
                     strong
-                      = link_to article_interest.title, article_path(article_interest.id)
+                      = link_to truncate_html(article_interest.title, length: 65), article_path(article_interest.id)
 
-                  = link_to article_interest.category.name, category_path(article_interest.category.id), class: 'interesting-category'
-                  p
-                    =truncate_html(article_interest.body)
+                  =truncate_html(article_interest.body, length: 70)
 
                 .col-3
-                  = image_tag(article_interest.image.url, class: 'rounded img-fluid')
+                  = image_tag(article_interest.image.url, size: 120, class: 'rounded img-fluid')
             hr
 
     .col-6
-      - @adverts_big.each do |big|
-        =image_tag(big.image.url, width: 700, class: 'img-fluid')
-
+      - if @adverts_big.present?
+        - @adverts_big.each do |big|
+          =image_tag(big.image.url, width: 700, class: 'img-fluid')
+      - else
+        .adverts-big-stub
+          h3.text-white.text-center Тут може бути ваша реклама
 
 div style="padding-bottom:20px;"
 .row
   .col-8.col-sm
     .col-12
-      .row
       - @articles.each do |article|
         .jumbotron.jumbotron-fluid
           .row
             .col-10
               .row
-                .col-1
-                  =link_to article.category.name, category_path(article.category.id), class: 'category'
-                .col-2
-                  p.article-date
-                    = l(article.created_at, format: :long)
+                .col-10
+                  h5
+                    strong
+                      = link_to article.title, article_path(article.id)
 
-              h5
-                strong
-                  = link_to article.title, article_path(article.id)
-              p
-                =truncate_html(article.body, length: 130)
+              .position-category-name
+                =link_to article.category.name, category_path(article.category.id), class: 'category'
+
+
+              =truncate_html(article.body, length: 100)
+
+              .article-date
+                = l(article.created_at, format: :long)
 
             .col-2
               = image_tag(article.image.url, class: 'rounded img-fluid')
 
-
-    .col-12.events
-      hr
-      -@events.each do |event|
-        .jumbotron.jumbotron-fluid
-          .col-12
-            .row
-              .col-2
-                h4
-                  strong
-                    = link_to event.title, event_path(event.id)
-              .col-4
-                p.article-date
-                  = l(event.date, format: :long)
-              .col-10
-                p.lead
-                  = truncate_html(event.body.html_safe, length: 320)
-
   .col-4
-    - @adverts_right.each do |advert|
-      = image_tag(advert.image.url, size: 450 ,class: 'image-fluid pad')
-    h3.text-center Топ відео
+    - if @adverts_right.present?
+      - @adverts_right.each do |advert|
+        = image_tag(advert.image.url, size: 450 ,class: 'image-fluid pad')
+    - else
+      .adverts-right-stub
+        h3.text-center тут може бути ваша реклама
+      br
+      .adverts-right-stub
+        h3.text-center тут може бути ваша реклама
+      br
+      .adverts-right-stub
+        h3.text-center тут може бути ваша реклама
+
+
+    h3.text-center style='margin-top:10px;' Топ відео
     - @videos.each do |video|
       iframe src="https://www.youtube.com/embed/#{video.uid}" width="450" height="280" frameborder='0' allowfullscreen
 
-.col-12
+//#### Blogs and Event ####//
+.col-12 style="padding-bottom: 10px;"
   .blog
     .row
       - @blogs.each do |blog|
-        .col-2
-          .card.blog-card
-            =image_tag(blog.image.url, class: 'card-img-top img-fluid')
-            .card-body
-              h5.card-title
-                = link_to blog.title, blog_path(blog)
-              .category
-                strong
-                  = blog.category.name
-              p.card-text
-                = truncate_html(blog.body, length: 40)
-              p.card-text
-                =link_to 'Далі', blog_path(blog)
+        .col-3
+          .media
+            =image_tag(blog.image.url(:thumb), size: 100, class: 'align-self-start mr-3')
+            .media-body
+              = link_to blog.author.name, author_path(blog.author), class: 'author-link' if blog.author.present?
+
+              h4.mt-0
+                = link_to truncate_html(blog.title.capitalize, length: 30), blog_path(blog)
+
+              = truncate_html(blog.body, length: 30)
+
+              =link_to 'Читати', blog_path(blog), class: 'position-link'
+
+.col-12 style="padding-bottom: 10px;"
+  .event
+    .row
+      - @events.each do |event|
+        .col-3
+          .media
+            =image_tag(event.image.url(:thumb), size: 100, class: 'align-self-start mr-3')
+
+            .media-body
+              =link_to event.company.name, company_path(event.company), class: 'company-link'
+
+              h4.mt-0
+                = link_to truncate_html(event.title.capitalize, length: 30), event_path(event)
+
+              = truncate_html(event.body, length: 30)
+              = link_to 'Далі', event_path(event), class: 'position-link'

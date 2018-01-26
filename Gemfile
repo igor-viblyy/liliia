@@ -49,7 +49,7 @@ group :development do
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'annotate'
-  # gem 'awesome_print', require: 'ap'
+  gem 'awesome_print', require: 'ap'
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false
 
@@ -66,10 +66,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'master'
 
 gem 'devise'
-gem 'omniauth'
-gem 'omniauth-facebook'
-gem 'omniauth-instagram'
-gem 'omniauth-google-oauth2'
+# gem 'omniauth'
+# gem 'omniauth-facebook'
+# gem 'omniauth-instagram'
+# gem 'omniauth-google-oauth2'
 
 gem 'rails-observers'
 gem 'yt', '~> 0.28.0'

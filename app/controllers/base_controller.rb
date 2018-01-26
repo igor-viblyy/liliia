@@ -1,6 +1,4 @@
 class BaseController < ApplicationController
-  before_action :authenticate_user!, except: %i[index show]
-
   def index
     @articles = Article.top_article(Time.now)
     @interesting = Article.interesting

@@ -2,18 +2,36 @@ body {
   background-color: #CCC !important;
 }
 
+.adverts-stub {
+  background-color: #566573;
+  height: 100px;
+}
+
+.adverts-big-stub {
+  background-color: #CCC;
+  width: 100%;
+  height: 512px;
+  padding: 220px 0 0 0;
+}
+
+.adverts-right-stub {
+  background-color: #CCC;
+  width: 97%;
+  height: 300px;
+  padding: 120px 0 0 0;
+}
+
 .nav-item {
-  a {
-    font-size: 1.25rem;
+  .bolder {
+    font-size: 1.20rem;
     font-weight: bold;
   }
 }
 
-
-
 footer {
   background-color: #34495E;
   min-height: 200px;
+  padding-top: 20px;
 
   .footer-logo {
     margin: 50px 0 0 0;
@@ -43,7 +61,6 @@ footer {
 
   .interesting-block {
     min-height: 300px;
-    // border: 5px solid #F7F8F9;
     border: 5px solid #CCC;
 
     .header {
@@ -59,6 +76,10 @@ footer {
       color: #000;
       text-decoration: underline;
     }
+
+    .body {
+      max-height: 85px;
+    }
   }
 
   .pad {
@@ -68,12 +89,34 @@ footer {
 
 .blog {
   background-color: #F8F9FA;
-  min-height: 350px;
-  padding: 10px;
+  min-height: 100px;
+  padding: 10px 0 0 10px;
 
-  .blog-card {
-    width: 18rem;
-    min-height: 360px;
+  .position-link {
+    position: relative;
+    top: -15px;
+  }
+
+  .author-link {
+    color: #000;
+    font-size: 1rem;
+  }
+}
+
+.event {
+  background-color: #F8F9FA;
+  min-height: 100px;
+  padding: 10px 0 0 10px;
+  margin-top: 20px;
+
+  .position-link {
+    position: relative;
+    top: -15px;
+  }
+
+  .company-link {
+    color: #000;
+    font-size: 1rem;
   }
 }
 
@@ -91,10 +134,8 @@ footer {
 }
 
 .article-date {
-  font-family: 'Noto Sans', sans-serif;
   font-size: 8pt;
   color: #566573;
-  padding: 6px 0 0 25px;
 }
 
 .article-image {
@@ -109,8 +150,14 @@ footer {
 }
 
 .jumbotron {
-  padding: 2rem 1rem !important;
+  padding: 0.8rem 1rem !important;
+
+  .position-category-name {
+    margin-top: -10px;
+  }
 }
+
+
 
 // ### Menu ###//
 .dropdown-submenu {

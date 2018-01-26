@@ -1,8 +1,10 @@
+- adverts_top = Advertising.top
 .top-baner
   .container
-    - adverts_top = Advertising.top
-    .card.bg-dark.text-white.position
-      / -@adverts_top.each do |advert_top|
-      /   = image_tag(advert_top.image.url, height: '100', class: 'card-img')
+    - if adverts_top.present?
       - adverts_top.each do |advert_top|
         = image_tag(advert_top.image.url, height: '100', class: 'card-img')
+    - else
+      .adverts-stub.position
+        h4.text-white.text-center style='padding-top: 30px;'
+          | Тут може бути ваша реклама

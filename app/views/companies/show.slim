@@ -1,0 +1,23 @@
+.col-12
+  .row
+    .col-8
+      .row
+        - @company_events.each do |event|
+          .col
+            .card.card-articles
+              =image_tag(event.image.url, class: 'card-img-top')
+              .card-body
+                .category
+                  strong
+                    = event.company.name
+                h4.card-title
+                  = link_to truncate_html(event.title, length: 30), event_path(event)
+                .card-text
+                  = truncate_html(event.body)
+                .row
+                  .col-6
+                    p.card-text
+                      = link_to 'Далі', event_path(event)
+                  .col-6
+                    strong.date
+                      =l(event.date, format: :long)

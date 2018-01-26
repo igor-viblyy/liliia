@@ -9,7 +9,6 @@ ActiveAdmin.register Advertising do
     column 'image' do |ad|
       image_tag(ad.image.url(:thumb))
     end
-    column :image_file_name
     column :image_updated_at
     column :position_top
     column :position_right

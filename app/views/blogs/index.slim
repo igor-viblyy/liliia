@@ -9,12 +9,11 @@
               .card-body
                 .row
                   .col-7
-                    h5.card-title
+                    = link_to blog.author.name, author_path(blog.author), style: 'color: #000;'
+
+                    h4.card-title
                       = link_to blog.title, blog_path(blog)
-                  .col-5.category
-                    strong
-                      = blog.category.name
-                p.card-text
+                .card-text
                   = truncate_html(blog.body)
                 p.card-text
                   =link_to 'Далі', blog_path(blog)
