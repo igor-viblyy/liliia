@@ -22,4 +22,6 @@ class Blog < ApplicationRecord
   belongs_to :author
 
   validates :title, :body, presence: true
+
+  scope :top_blog, ->(date) { where("created_at < ?", date).limit(4) }
 end

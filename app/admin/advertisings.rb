@@ -14,8 +14,11 @@ ActiveAdmin.register Advertising do
     end
     column :image_updated_at
     column :position_top
-    column :position_right
     column :top_big
+    column :position_right
+    column :page_article
+    column :page_blog
+    column :page_event
     column :url
     actions
   end
@@ -29,8 +32,11 @@ ActiveAdmin.register Advertising do
       row :image_file_name
       row :image_updated_at
       row :position_top
-      row :position_right
       row :top_big
+      row :position_right
+      row :page_article
+      row :page_blog
+      row :page_event
       row :url
     end
   end
@@ -43,6 +49,9 @@ ActiveAdmin.register Advertising do
       f.input :position_top, as: :boolean
       f.input :position_right, as: :boolean
       f.input :top_big, as: :boolean
+      f.input :page_event, as: :boolean
+      f.input :page_article, as: :boolean
+      f.input :page_blog, as: :boolean
     end
     f.actions
   end

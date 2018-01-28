@@ -23,6 +23,7 @@ class Event < ApplicationRecord
   belongs_to :company
 
   scope :index_event, -> { where(published: true).limit(5) }
+  default_scope { order(created_at: :desc) }
 
   validates :title, :body, presence: true
 end

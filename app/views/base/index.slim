@@ -24,7 +24,7 @@
     .col-6
       - if @adverts_big.present?
         - @adverts_big.each do |big|
-          =image_tag(big.image.url, width: 700, class: 'img-fluid')
+          =image_tag(big.image.url, width: 700, class: 'img-fluid image-big')
       - else
         .adverts-big-stub
           h3.text-white.text-center Тут може бути ваша реклама
@@ -58,7 +58,7 @@ div style="padding-bottom:20px;"
   .col-4
     - if @adverts_right.present?
       - @adverts_right.each do |advert|
-        = image_tag(advert.image.url, size: 450 ,class: 'image-fluid pad')
+        = image_tag(advert.image.url, class: 'image-fluid pad image-right')
     - else
       .adverts-right-stub
         h3.text-center тут може бути ваша реклама
@@ -72,7 +72,7 @@ div style="padding-bottom:20px;"
 
     h3.text-center style='margin-top:10px;' Топ відео
     - @videos.each do |video|
-      iframe src="https://www.youtube.com/embed/#{video.uid}" width="450" height="280" frameborder='0' allowfullscreen
+      iframe src="https://www.youtube.com/embed/#{video.uid}" width="410" height="280" frameborder='0' allowfullscreen
 
 //#### Blogs and Event ####//
 .col-12 style="padding-bottom: 10px;"
@@ -88,7 +88,7 @@ div style="padding-bottom:20px;"
               h5.mt-0
                 = link_to truncate_html(blog.title.capitalize, length: 20), blog_path(blog)
 
-              = truncate_html(blog.body, length: 30)
+              = truncate_html(blog.body, length: 25)
 
               =link_to 'Читати', blog_path(blog), class: 'position-link'
 
@@ -103,8 +103,8 @@ div style="padding-bottom:20px;"
             .media-body
               =link_to event.company.name, company_path(event.company), class: 'company-link'
 
-              h4.mt-0
-                = link_to truncate_html(event.title.capitalize, length: 10), event_path(event)
+              h5.mt-0
+                = link_to truncate_html(event.title.capitalize, length: 20), event_path(event)
 
-              = truncate_html(event.body, length: 30)
+              = truncate_html(event.body, length: 25)
               = link_to 'Далі', event_path(event), class: 'position-link'

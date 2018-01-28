@@ -21,6 +21,15 @@ body {
   padding: 120px 0 0 0;
 }
 
+.image-right {
+  width: 97%;
+}
+
+.image-big {
+  width: 630px;
+  height: 512px;
+}
+
 .nav-item {
   .bolder {
     font-size: 1.15rem;
@@ -100,6 +109,8 @@ footer {
   .author-link {
     color: #000;
     font-size: 1rem;
+    position: relative;
+    top: -7px;
   }
 }
 
@@ -117,6 +128,8 @@ footer {
   .company-link {
     color: #000;
     font-size: 1rem;
+    position: relative;
+    top: -7px;
   }
 }
 

@@ -23,6 +23,8 @@ class Article < ApplicationRecord
 
   validates :title, :body, presence: true
 
-  scope :top_article, ->(time) { where("updated_at < ?", time).limit(10) }
+  scope :top_article, -> { order(created_at: :desc).limit(10) }
   scope :interesting, -> { where(interesting: true) }
+
+  default_scope { order(created_at: :desc) }
 end

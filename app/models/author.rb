@@ -10,4 +10,5 @@
 
 class Author < ApplicationRecord
   has_many :blogs, dependent: :destroy
+  default_scope { order(created_at: :desc) }
 end
