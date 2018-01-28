@@ -74,6 +74,7 @@ gem 'devise'
 gem 'rails-observers'
 gem 'yt', '~> 0.28.0'
 gem 'simple_form'
+gem 'font-awesome-sass'
 
 gem 'truncate_html'
 gem 'tinymce-rails'

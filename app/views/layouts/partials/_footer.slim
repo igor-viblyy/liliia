@@ -4,12 +4,14 @@ footer
       .col
         = image_tag('logo.png', width: '220', height: '145', class: 'footer-logo')
       .col-7
-      .col.text-center.text-white.contacts
-        h5 НАШІ КОНТАКТИ:
-        p
-          a href="mailto:info@liliia.com.ua" info@liliia.com.ua
+      .col.contacts
+
+
+        = link_to "Наші Контакти", contacts_path, class: 'text-white'
+        br
+        = link_to "Про Нас", abouts_path, class: 'text-white'
 
     .row
       .container
-        p.text-center.text-white
+        p.text-center.text-white style="font-size: 11px"
           | &copy;2018, «Лілія». Використання матеріалів сайту лише за умови посилання (для інтернет-видань - гіперпосилання) на «Лілію».

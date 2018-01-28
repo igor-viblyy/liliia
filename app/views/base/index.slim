@@ -24,7 +24,8 @@
     .col-6
       - if @adverts_big.present?
         - @adverts_big.each do |big|
-          =image_tag(big.image.url, width: 700, class: 'img-fluid image-big')
+          a href="#{big.url}"
+            = image_tag(big.image.url, width: 700, class: 'img-fluid image-big')
       - else
         .adverts-big-stub
           h3.text-white.text-center Тут може бути ваша реклама
@@ -58,7 +59,8 @@ div style="padding-bottom:20px;"
   .col-4
     - if @adverts_right.present?
       - @adverts_right.each do |advert|
-        = image_tag(advert.image.url, class: 'image-fluid pad image-right')
+        a href="#{advert.url}"
+          = image_tag(advert.image.url, class: 'image-fluid pad image-right')
     - else
       .adverts-right-stub
         h3.text-center тут може бути ваша реклама

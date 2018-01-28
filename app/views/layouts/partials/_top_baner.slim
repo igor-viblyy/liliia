@@ -3,7 +3,8 @@
   .container
     - if adverts_top.present?
       - adverts_top.each do |advert_top|
-        = image_tag(advert_top.image.url, height: '100', class: 'card-img')
+        a href="#{advert_top.url}"
+          = image_tag(advert_top.image.url, height: '100', class: 'card-img')
     - else
       .adverts-stub.position
         h4.text-white.text-center style='padding-top: 30px;'

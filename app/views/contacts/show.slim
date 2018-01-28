@@ -1,12 +1,13 @@
 .container
   .row
-    .col
-      =image_tag('logo', size: '400')
-    .col
-      p
-        strong Мейл:
-        | user@example.com
-
-      p
-        strong Адресса:
-        | Тернопіль, Якась вулиця 77
+    .col-7
+      =image_tag('logo', height: '450')
+    .col-5
+      .contacts
+        p
+          strong
+            i.fa.fa-address-book.fa-lg
+              a href="mailto:info@liliia.com.ua" &nbsp;info@liliia.com.ua
+        p
+          strong
+            i.fa.fa-mobile.fa-lg &nbsp;+380973127660
