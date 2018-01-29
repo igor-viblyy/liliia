@@ -5,7 +5,7 @@ class AuthorsController < BaseController
   # end
 
   def show
-    @autor = Author.find(params[:id])
+    @autor = Author.friendly.find(params[:id])
     @autor_blogs = @autor.blogs.all
   end
 end

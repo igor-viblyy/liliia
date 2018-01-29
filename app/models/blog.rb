@@ -16,6 +16,8 @@
 #
 
 class Blog < ApplicationRecord
+  extend FriendlyId
+
   has_attached_file :image, styles: { medium: '300x300>', thumb: "100x100>", blog: "294x190>" }, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
@@ -24,4 +26,6 @@ class Blog < ApplicationRecord
   validates :title, :body, presence: true
 
   scope :top_blog, ->(date) { where("created_at < ?", date).limit(4) }
+
+  friendly_id :title, use: :scoped, scope: :author
 end

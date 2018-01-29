@@ -10,10 +10,10 @@
             .body
               .row
                 .col-9
-                  = link_to article_interest.category.name, category_path(article_interest.category.id), class: 'interesting-category'
+                  = link_to article_interest.category.name, category_path(article_interest.category), class: 'interesting-category'
                   h5
                     strong
-                      = link_to truncate_html(article_interest.title, length: 50), article_path(article_interest.id)
+                      = link_to truncate_html(article_interest.title, length: 50), article_path(article_interest)
 
                   =truncate_html(article_interest.body, length: 50)
 
@@ -42,11 +42,10 @@ div style="padding-bottom:20px;"
                 .col-10
                   h5
                     strong
-                      = link_to article.title, article_path(article.id)
+                      = link_to article.title, article_path(article)
 
               .position-category-name
-                =link_to article.category.name, category_path(article.category.id), class: 'category'
-
+                =link_to article.category.name, category_path(article.category), class: 'category'
 
               =truncate_html(article.body, length: 90)
 

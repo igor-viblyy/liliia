@@ -14,7 +14,7 @@ nav#header.navbar.navbar-expand-lg.navbar-light.bg-light.container-fluid
           / li.dropdown-submenu
           li.nav-item
             - categories.each do |category|
-              = link_to category.name, category_path(category.id), class: 'dropdown-item', tabindex: -1
+              = link_to category.name, category_path(category), class: 'dropdown-item', tabindex: -1
               / ul.dropdown-menu
               /   - subcategories.each do |ch|
               /     li.dropdown-item

@@ -1,7 +1,7 @@
 ActiveAdmin.register Article do
   menu label: 'Статті'
 
-  permit_params [:title, :body, :image_file_name, :image_file_size, :image_updated_at, :image_content_type, :image, :url, :category_id, :interesting]
+  permit_params [:title, :body, :image_file_name, :image_file_size, :image_updated_at, :image_content_type, :image, :url, :category_id, :interesting, :slug]
 
   index do
     id_column
@@ -22,18 +22,14 @@ ActiveAdmin.register Article do
     attributes_table do
       row :category
       row :title
-
       row :body do
         truncate_html(article.body, length: 320)
       end
-
       row :interesting
       row :image do
         image_tag(article.image.url(:thumb)) if article.image.present?
       end
-
       row :created_at
-
     end
   end
 

@@ -9,9 +9,13 @@
 #
 
 class Category < ApplicationRecord
+  extend FriendlyId
+
   has_many :articles, dependent: :destroy
   has_many :blogs, dependent: :destroy
 
   validates :name, presence: true
+
+  friendly_id :name, use: :history
 
 end

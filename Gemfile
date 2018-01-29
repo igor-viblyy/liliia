@@ -58,6 +58,7 @@ group :development do
   gem 'capistrano3-puma', require: false
   gem 'capistrano-bundler', require: false
   gem 'capistrano-rvm', require: false
+  gem 'capistrano-rails-console', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -74,6 +75,7 @@ gem 'devise'
 gem 'rails-observers'
 gem 'yt', '~> 0.28.0'
 gem 'simple_form'
+gem 'friendly_id', '~> 5.1.0'
 gem 'font-awesome-sass'
 
 gem 'truncate_html'
