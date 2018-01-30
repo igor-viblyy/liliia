@@ -36,7 +36,7 @@ set :puma_init_active_record, true  # Change to false when not using ActiveRecor
 ## Linked Files & Directories (Default None):
 set :linked_files, %w{config/database.yml}
 set :linked_dirs,  %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle}
-set :console_env, :production
+# set :console_env, :production
 
 # Default value for :linked_files is []
 append :linked_files, "config/database.yml", "config/secrets.yml"
