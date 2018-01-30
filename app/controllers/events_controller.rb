@@ -1,6 +1,6 @@
 class EventsController < BaseController
   def index
-    @events = Event.all
+    @events = Event.all.page(params[:page])
     @advertisings = Advertising.page_event
   end
 

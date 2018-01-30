@@ -9,5 +9,8 @@
 #
 
 class Company < ApplicationRecord
+  extend FriendlyId
   has_many :events, dependent: :destroy
+
+  friendly_id :name, use: :history
 end

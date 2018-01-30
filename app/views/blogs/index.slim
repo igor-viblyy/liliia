@@ -17,6 +17,13 @@
                 p.card-text
                   =link_to 'Далі', blog_path(blog)
 
+        .col-12
+          .row
+            .col-4
+            .col
+              = paginate @blogs, theme: 'twitter-bootstrap-4'
+            .col-4
+
     .col-4
       - if @adverts.present?
         - @adverts.each do |advert|

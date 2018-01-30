@@ -5,7 +5,7 @@
         - @events.each do |event|
           .col
             .card.card-articles
-              =image_tag(event.image.url, class: 'card-img-top')
+              =image_tag(event.image.url, class: 'card-img-top card-img')
               .card-body
                 .category
                   strong
@@ -21,6 +21,13 @@
                   .col-7
                     strong.date
                       =l(event.date, format: :long)
+
+        .col-12
+          .row
+            .col-4
+            .col
+              = paginate @events, theme: 'twitter-bootstrap-4'
+            .col-4
     .col-4
       - if @adverts.present?
         - @adverts.each do |advert|

@@ -21,6 +21,12 @@
                   .col-7
                     strong.date
                       =l(event.date, format: :long)
+        .col-12
+          .row
+            .col-4
+            .col
+              = paginate @company_events, theme: 'twitter-bootstrap-4'
+            .col-4
 
     .col-4
       - if @adverts.present?

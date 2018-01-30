@@ -5,7 +5,7 @@
         -@category.each do |article|
           .col
             .card.card-articles
-              = image_tag(article.image.url, class: 'card-img-top')
+              = image_tag(article.image.url, class: 'card-img-top card-img')
               .card-body
                 .category
                   strong
@@ -23,6 +23,14 @@
                   .col-7
                     strong.date
                       = l(article.created_at, format: :long)
+
+
+        .col-12
+          .row
+            .col-4
+            .col
+              = paginate @category, theme: 'twitter-bootstrap-4'
+            .col-4
 
     .col-4
       - if @adverts.present?

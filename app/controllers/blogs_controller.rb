@@ -1,7 +1,7 @@
 class BlogsController < BaseController
   def index
-    @blogs = Blog.all
-    super
+    @blogs = Blog.all.page(params[:page])
+    @adverts = Advertising.page_blog
   end
 
   def show

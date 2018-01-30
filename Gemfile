@@ -76,7 +76,8 @@ gem 'rails-observers'
 gem 'yt', '~> 0.28.0'
 gem 'simple_form'
 gem 'friendly_id', '~> 5.1.0'
-gem 'font-awesome-sass'
+gem 'kaminari'
+gem 'bootstrap4-kaminari-views'
 
 gem 'truncate_html'
 gem 'tinymce-rails'
@@ -88,6 +89,7 @@ gem 'activeadmin_tinymce'
 
 gem 'slim-rails'
 gem 'bootstrap', '~> 4.0.0.beta2.1'
+gem 'font-awesome-sass'
 gem 'jquery-rails'
 
 gem 'paperclip', "~> 5.0.0"

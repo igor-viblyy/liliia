@@ -118,7 +118,7 @@ footer {
   background-color: #F8F9FA;
   min-height: 100px;
   padding: 10px 0 0 10px;
-  margin-top: 20px;
+  // margin-top: 20px;
 
   .position-link {
     position: relative;
@@ -131,6 +131,11 @@ footer {
     position: relative;
     top: -7px;
   }
+}
+
+.card-img {
+  width: 255px;
+  height: 191px;
 }
 
 #header {

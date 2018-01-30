@@ -32,7 +32,5 @@ class Article < ApplicationRecord
 
   default_scope { order(created_at: :desc) }
 
-  # friendly_id :title, use: [:slugged, :history]
   friendly_id :title, use: :scoped, scope: :category
-
 end
