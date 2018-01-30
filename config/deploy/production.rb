@@ -41,11 +41,11 @@
 #
 # Global options
 # --------------
- set :ssh_options, {
-   keys: %w(/home/igor-laptop/.ssh/id_rsa),
-   forward_agent: false,
-   auth_methods: %w(password)
- }
+ # set :ssh_options, {
+ #   keys: %w(/home/igor-laptop/.ssh/id_rsa),
+ #   forward_agent: false,
+ #   auth_methods: %w(password)
+ # }
 
  set :console_env, :production
 #
