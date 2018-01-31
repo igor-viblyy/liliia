@@ -56,24 +56,25 @@ div style="padding-bottom:20px;"
               = image_tag(article.image.url, class: 'rounded img-fluid')
 
   .col-4
-    - if @adverts_right.present?
-      - @adverts_right.each do |advert|
-        a href="#{advert.url}"
-          = image_tag(advert.image.url, class: 'image-fluid pad image-right')
-    - else
-      .adverts-right-stub
-        h3.text-center тут може бути ваша реклама
-      br
-      .adverts-right-stub
-        h3.text-center тут може бути ваша реклама
-      br
-      .adverts-right-stub
-        h3.text-center тут може бути ваша реклама
+    .col-12
+      - if @adverts_right.present?
+        - @adverts_right.each do |advert|
+          a href="#{advert.url}"
+            = image_tag(advert.image.url, class: 'image-fluid pad image-right')
+      - else
+        .adverts-right-stub
+          h3.text-center тут може бути ваша реклама
+        br
+        .adverts-right-stub
+          h3.text-center тут може бути ваша реклама
+        br
+        .adverts-right-stub
+          h3.text-center тут може бути ваша реклама
 
 
-    h3.text-center style='margin-top:10px;' Топ відео
-    - @videos.each do |video|
-      iframe src="https://www.youtube.com/embed/#{video.uid}" width="410" height="280" frameborder='0' allowfullscreen
+      h3.text-center style='margin-top:10px;' Топ відео
+      - @videos.each do |video|
+        iframe src="https://www.youtube.com/embed/#{video.uid}" width="410" height="280" frameborder='0' allowfullscreen
 
 //#### Blogs and Event ####//
 .col-12 style="padding-bottom: 10px;"
