@@ -31,7 +31,8 @@
     .col-4
       - if @adverts.present?
         - @adverts.each do |advert|
-          = image_tag(advert.image.url, class: 'image-fluid pad image-right')
+          a href="#{advert.url}"
+            = image_tag(advert.image.url, class: 'image-fluid pad image-right')
       - else
         .adverts-right-stub
           h3.text-center тут може бути ваша реклама
