@@ -47,7 +47,7 @@
  #   auth_methods: %w(password)
  # }
 
- set :console_env, :production
+ # set :console_env, :production
 #
 # The server-based syntax can be used to override options:
 # ------------------------------------
