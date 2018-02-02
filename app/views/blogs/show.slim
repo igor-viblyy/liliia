@@ -8,4 +8,7 @@
       div
         = @blog.body.html_safe
 
+      div
+        = social_share_button_tag(@blog.title)
+
       = render 'disqus'

@@ -16,5 +16,6 @@
 //= require bootstrap
 //= require tinymce
 //= require tinymce-jquery
+//= require social-share-button
 //= require turbolinks
 //= require_tree .

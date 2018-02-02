@@ -10,3 +10,6 @@
           = l(@event.date, format: :long)
       .row
         p=@event.body.html_safe
+
+      .row
+        = social_share_button_tag(@event.title)
