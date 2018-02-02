@@ -1,8 +1,12 @@
+-provide(:title, @event.title)
 .container
   .row
     .col-12
       .row
         h5
           strong= @event.title
+      .row
+        strong
+          = l(@event.date, format: :long)
       .row
         p=@event.body.html_safe
