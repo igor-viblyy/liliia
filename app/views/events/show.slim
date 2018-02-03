@@ -12,4 +12,4 @@
         p=@event.body.html_safe
 
       .row
-        = social_share_button_tag(@event.title, desc: @event.body.html_safe, url: "http://liliia.com.ua/events/#{@event.id}")
+        = social_share_button_tag(@event.title, desc: @event.body.html_safe, image: image_tag(@blog.image.url), url: "http://liliia.com.ua/events/#{@event.id}")
