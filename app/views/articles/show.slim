@@ -9,6 +9,6 @@
         = @article.body.html_safe
 
       div
-        = social_share_button_tag(@article.title)
+        = social_share_button_tag(@article.title, desc: @article.body.html_safe, url: "http://liliia.com.ua/articles/#{@article.id}")
 
       = render 'disqus'
