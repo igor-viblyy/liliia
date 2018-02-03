@@ -10,6 +10,7 @@
 
       .row
         div
-          = social_share_button_tag(@article.title, url: "#{article_url(@article)}", desc: truncate_html(@article.body.html_safe), image: image_tag(@article.image.url), :'data-type' => 'photo')
+          = social_share_button_tag(@article.title, url: article_url(@article), desc: truncate_html(@article.body.html_safe), image: image_tag(@article.image.url(:medium)))
+        / a href="https://www.facebook.com/sharer/sharer.php?u=#{@article.title}" title="Share on Facebook" target="_blank" class="btn btn-default"> Facebook
 
       = render 'disqus'
