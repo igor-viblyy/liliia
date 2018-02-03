@@ -1,9 +1,9 @@
 -provide(:title, @article.title)
 
 - content_for :head do
-  / meta[property="fb:app_id" content="myid"]
-  meta property="og:type" content="liliia:article"
-  meta property="og:url" content="http://liliia.com.ua" + #{article_path(@article)}"
+  meta property="fb:app_id" content="2185085991718553"
+  meta property="og:type" content="article"
+  meta property="og:url" content="#{article_url(@article)}"
   meta property="og:title" content="#{@article.title}"
   meta property="og:image" content="#{@article.image.url(:medium)}"
 
