@@ -5,8 +5,8 @@
   meta property="og:type" content="article"
   meta property="og:url" content="#{article_url(@article)}"
   meta property="og:title" content="#{@article.title}"
+  meta property="og:description" content="#{truncate_html(@article.body.html_safe, length: 50)}"
   meta property="og:image" content="#{@article.image.url(:medium)}"
-  meta property="og:description" content="#{@article.body.html_safe}"
 
 .container
   .row
@@ -20,6 +20,4 @@
       .row
         div
           = social_share_button_tag(@article.title, url: article_url(@article), desc: truncate_html(@article.body.html_safe), image: @article.image.url)
-        / a href="https://www.facebook.com/sharer/sharer.php?u=#{@article.title}" title="Share on Facebook" target="_blank" class="btn btn-default"> Facebook
-
       = render 'disqus'
