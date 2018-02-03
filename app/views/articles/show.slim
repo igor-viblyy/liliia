@@ -8,7 +8,8 @@
       div
         = @article.body.html_safe
 
-      div
-        = social_share_button_tag(@article.title, desc: @article.body.html_safe, image: image_tag(@article.image.url), url: "http://liliia.com.ua/articles/#{@article.id}")
+      .row
+        div
+          = social_share_button_tag(@article.title, desc: @article.body.html_safe, url: "http://liliia.com.ua/articles/#{@article.id}")
 
       = render 'disqus'

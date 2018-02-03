@@ -124,5 +124,5 @@ div style="padding-bottom:20px;"
               h5.mt-0
                 = link_to truncate_html(event.title.capitalize, length: 20), event_path(event)
 
-              = truncate_html(event.body, length: 25)
+              = truncate_html(event.body, length: 20)
               = link_to 'Далі', event_path(event), class: 'position-link'
