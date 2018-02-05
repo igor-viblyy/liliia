@@ -1,6 +1,6 @@
-- set_meta_tags og: { type: "event", title: "#{@event.title}", url: "#{event_url(@event)}", description: "#{truncate_html(@event.body.html_safe, length: 50)}", image_src: "http://liliia.com.ua#{@event.image.url}" }
+- set_meta_tags og: { type: "event", title: "#{@event.title}", url: "#{event_url(@event)}", description: "#{truncate_html(@event.body.html_safe, length: 50)}", image: "http://liliia.com.ua#{@event.image.url}" }
 
-- set_meta_tags title: "#{@event.title}", description: "#{truncate_html(@event.body.html_safe, length: 50)}", image_src: "http://liliia.com.ua#{@event.image.url}"
+- set_meta_tags title: "#{@event.title}", description: "#{truncate_html(@event.body.html_safe, length: 50)}", image: "http://liliia.com.ua#{@event.image.url}"
 
 .container
   .row
