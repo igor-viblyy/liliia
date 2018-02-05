@@ -1,5 +1,7 @@
 - set_meta_tags og: { type: "blog", title: "#{@blog.title}", url: "#{blog_url(@blog)}", description: "#{truncate_html(@blog.body.html_safe, length: 50)}", image_src: "http://liliia.com.ua#{@blog.image.url}" }
 
+- set_meta_tags title: "#{@blog.title}", description: "#{truncate_html(@blog.body.html_safe, length: 50)}", image_src: "http://liliia.com.ua#{@blog.image.url}"
+
 .container
   .row
     .col-12
