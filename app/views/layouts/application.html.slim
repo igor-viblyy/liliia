@@ -1,14 +1,7 @@
 doctype html
 html
   head
-    / Global site tag (gtag.js) - Google Analytics
-    script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-113550144-1"
-    javascript:
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-113550144-1');
+    = render 'layouts/partials/google_analytics'
 
     title
       =content_for?(:title) ? yield(:title) : 'Лілія'
