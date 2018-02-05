@@ -1,12 +1,12 @@
 doctype html
 html
   head
-    javascript:
-      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-     })(window,document,'script','dataLayer','GTM-NW8NFPX');
+    // javascript:
+    //   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    //   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    //   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    //    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    //  })(window,document,'script','dataLayer','GTM-NW8NFPX');
 
     title
       =content_for?(:title) ? yield(:title) : 'Лілія'
@@ -28,8 +28,8 @@ html
 
       gtag('config', 'UA-113550144-1');
 
-    noscript
-      iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-NW8NFPX" style="display:none;visibility:hidden" width="0"
+    / noscript
+    /   iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-NW8NFPX" style="display:none;visibility:hidden" width="0"
 
   body
     .container-fluid
