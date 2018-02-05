@@ -1,11 +1,4 @@
--provide(:title, @blog.title)
-
-- content_for :head do
-  meta property="og:type" content="blog"
-  meta property="og:url" content="#{blog_url(@blog)}"
-  meta property="og:title" content="#{@blog.title}"
-  meta property="og:description" content="#{truncate_html(@blog.body.html_safe, length: 50)}"
-  meta property="og:image" content="http://liliia.com.ua#{@blog.image.url}"
+- set_meta_tags type: "blog", title: "#{@blog.title}", url: "#{blog_url(@blog)}", description: "#{truncate_html(@blog.body.html_safe, length: 50)}", image: "http://liliia.com.ua#{@blog.image.url}"
 
 .container
   .row

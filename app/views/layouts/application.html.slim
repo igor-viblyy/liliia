@@ -2,13 +2,9 @@ doctype html
 html
   head
     = render 'layouts/partials/google_analytics'
+    = display_meta_tags site: 'Лілія'
+    = display_meta_tags og: { type: :type, url: :url, title: :title, description: :description, image: :image }
 
-    meta charset="UTF-8"
-    meta name="viewport" content="width=device-width, initial-scale=1.0"
-    = content_for?(:head) ? yield(:head) : ''
-
-    title
-      =content_for?(:title) ? yield(:title) : 'Лілія'
     = csrf_meta_tags
 
     link href="https://fonts.googleapis.com/css?family=Inconsolata|Noto+Sans|Open+Sans|Roboto|Source+Sans+Pro" rel="stylesheet"

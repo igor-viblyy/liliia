@@ -1,11 +1,4 @@
--provide(:title, @article.title)
-
-- content_for :head do
-  meta property="og:type" content="article"
-  meta property="og:url" content="#{article_url(@article)}"
-  meta property="og:title" content="#{@article.title}"
-  meta property="og:description" content="#{truncate_html(@article.body.html_safe, length: 50)}"
-  meta property="og:image" content="http://liliia.com.ua#{@article.image.url}"
+- set_meta_tags type: "article", title: "#{@article.title}", url: "#{article_url(@article)}", description: "#{truncate_html(@article.body.html_safe, length: 50)}", image: "http://liliia.com.ua#{@article.image.url}"
 
 .container
   .row
