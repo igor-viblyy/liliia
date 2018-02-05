@@ -1,4 +1,13 @@
 -provide(:title, @blog.title)
+
+- content_for :head do
+  meta property="fb:app_id" content="2185085991718553"
+  meta property="og:type" content="blog"
+  meta property="og:url" content="#{blog_url(@blog)}"
+  meta property="og:title" content="#{@blog.title}"
+  meta property="og:description" content="#{truncate_html(@blog.body.html_safe, length: 50)}"
+  meta property="og:image" content="http://liliia.com.ua#{@blog.image.url}"
+
 .container
   .row
     .col-12
@@ -9,6 +18,6 @@
         = @blog.body.html_safe
 
       div
-        = social_share_button_tag(@blog.title, desc: @blog.body.html_safe, url: "http://liliia.com.ua/blogs/#{@blog.id}")
+        = social_share_button_tag(@blog.title, desc: @blog.body.html_safe, url: blog_url(@blog), image: "http://liliia.com.ua#{@blog.image.url}")
 
       = render 'disqus'

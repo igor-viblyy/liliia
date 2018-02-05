@@ -1,4 +1,13 @@
 -provide(:title, @event.title)
+
+- content_for :head do
+  meta property="fb:app_id" content="2185085991718553"
+  meta property="og:type" content="event"
+  meta property="og:url" content="#{event_url(@event)}"
+  meta property="og:title" content="#{@event.title}"
+  meta property="og:description" content="#{truncate_html(@event.body.html_safe, length: 50)}"
+  meta property="og:image" content="http://liliia.com.ua#{@event.image.url}"
+
 .container
   .row
     .col-12
@@ -12,4 +21,4 @@
         p=@event.body.html_safe
 
       .row
-        = social_share_button_tag(@event.title, desc: @event.body.html_safe,  url: "http://liliia.com.ua/events/#{@event.id}")
+        = social_share_button_tag(@event.title, desc: @event.body.html_safe,  url: event_url(@event), image: "http://liliia/com.ua#{@event.image.url}")
