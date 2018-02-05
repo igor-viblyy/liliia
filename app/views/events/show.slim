@@ -20,5 +20,5 @@
       .row
         p=@event.body.html_safe
 
-      .row
-        = social_share_button_tag(@event.title, desc: @event.body.html_safe,  url: event_url(@event), image: "http://liliia/com.ua#{@event.image.url}")
+      / .row
+      /   = social_share_button_tag(@event.title, desc: @event.body.html_safe,  url: event_url(@event), image: "http://liliia/com.ua#{@event.image.url}")
