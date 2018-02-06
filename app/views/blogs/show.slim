@@ -1,6 +1,4 @@
-- set_meta_tags og: { type: "blog", title: "#{@blog.title}", url: "#{blog_url(@blog)}", description: "#{truncate_html(@blog.body.html_safe, length: 50)}", image: "http://liliia.com.ua#{@blog.image.url}" }
-
-/ - set_meta_tags title: "#{@blog.title}", description: "#{truncate_html(@blog.body.html_safe, length: 50)}", image: "http://liliia.com.ua#{@blog.image.url}"
+- set_meta_tags og: { title: @blog.title, url: blog_url(@blog), description: truncate_html(@blog.body.html_safe, length: 50, image: @blog.image.url }
 
 .container
   .row
@@ -10,8 +8,5 @@
          =@blog.title
       div
         = @blog.body.html_safe
-
-      / div
-      /   = social_share_button_tag(@blog.title, desc: @blog.body.html_safe, url: blog_url(@blog), image: "http://liliia.com.ua#{@blog.image.url}")
 
       = render 'disqus'
