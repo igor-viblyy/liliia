@@ -11,13 +11,11 @@ class ArticlesController < BaseController
                   site: 'Лілія',
                   description: @article.body.html_safe,
                   og: {
-                    locale: 'uk_UK',
-                    type: 'article',
-                    site_name: 'Лілія',
-                    image: @article.image.path(:medium),
                     title: @article.title,
+                    description: @article.body.html_safe,
+                    type: 'website',
                     url:  article_url(@article),
-                    description: @article.body.html_safe
+                    image: image_url(@article.image.url(:medium))
                   }
   end
 
