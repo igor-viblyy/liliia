@@ -1,10 +1,11 @@
 doctype html
-html
+html lang="uk"
   head
     = render 'layouts/partials/google_analytics'
-    = display_meta_tags site: 'Лілія'
-
+    meta charset="UTF-8"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
     = csrf_meta_tags
+    = display_meta_tags site: 'Лілія'
 
     link href="https://fonts.googleapis.com/css?family=Inconsolata|Noto+Sans|Open+Sans|Roboto|Source+Sans+Pro" rel="stylesheet"
 

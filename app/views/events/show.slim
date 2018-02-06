@@ -1,4 +1,4 @@
-- set_meta_tags og: { type: 'article', locale: 'ua_UA', site_name: 'Лілія', title: @event.title, url: event_url(@event), description: truncate_html(@event.body.html_safe, length: 50), image: asset_url(@event.image.url) }
+- set_meta_tags og: { locale: 'ua_UA', type: 'article',  site_name: 'Лілія', image: asset_url(@event.image.url), title: @event.title, url: event_url(@event), description: truncate_html(@event.body.html_safe, length: 50) }
 
 .container
   .row
