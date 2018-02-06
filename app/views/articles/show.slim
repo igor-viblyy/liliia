@@ -1,4 +1,4 @@
-- set_meta_tags og: { type: 'article', title: @article.title, url: article_url(@article), description: truncate_html(@article.body.html_safe, length: 50)}, image: "http://liliia.com.ua#{@article.image.url}" }
+- set_meta_tags og: { type: 'article', title: @article.title, url:  article_url(@article), description: truncate_html(@article.body.html_safe, length: 50), image: "http://liliia.com.ua#{@article.image.url}" }
 
 / - set_meta_tags title: "#{@article.title}", description: "#{truncate_html(@article.body.html_safe, length: 50)}", image: "http://liliia.com.ua#{@article.image.url}"
 
