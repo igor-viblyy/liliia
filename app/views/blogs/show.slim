@@ -1,4 +1,4 @@
-- set_meta_tags og: { title: @blog.title, url: blog_url(@blog), description: truncate_html(@blog.body.html_safe, length: 50), image: @blog.image.url }
+- set_meta_tags og: { type: 'article', locale: 'ua_UA', site_name: 'Лілія', title: @blog.title, url: blog_url(@blog), description: truncate_html(@blog.body.html_safe, length: 50), image: asset_url(@blog.image.url) }
 
 .container
   .row
