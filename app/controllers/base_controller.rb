@@ -12,5 +12,16 @@ class BaseController < ApplicationController
     @adverts_big = Advertising.big
 
     @videos = Video.top(Time.zone.now)
+
+    set_meta_tags title: 'Лілія',
+                  site: 'Лілія',
+                  description: 'Інтернет-журнал про здоровя та життя Лілія',
+                  og: {
+                    title: 'Лілія',
+                    description: 'Інтернет-журнал про здоровя та життя Лілія',
+                    type: 'website',
+                    url:  "http://liliia.com.ua",
+                    image: image_url('logo.png')
+                  }
   end
 end
