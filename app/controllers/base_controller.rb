@@ -21,7 +21,7 @@ class BaseController < ApplicationController
                     description: 'Інтернет-журнал про здоровя та життя Лілія',
                     type: 'website',
                     url:  "http://liliia.com.ua",
-                    image: URI.join(request.url, image_url('logo-black.png'))
+                    image: URI.join(request.url, image_path('logo-black.png'))
                   }
   end
 end
