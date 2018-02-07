@@ -14,7 +14,7 @@ class EventsController < BaseController
                     description: @event.body.html_safe,
                     type: 'website',
                     url:  event_url(@event),
-                    image: URI.join(request.url, @event.image.url(:medium)),
+                    image: URI.join(request.url, @event.image.url),
                     image: {
                       type: 'image/jpg',
                       width: "300",
