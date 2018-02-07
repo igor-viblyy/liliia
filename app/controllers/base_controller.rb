@@ -21,7 +21,12 @@ class BaseController < ApplicationController
                     description: 'Інтернет-журнал про здоровя та життя Лілія',
                     type: 'website',
                     url:  "http://liliia.com.ua",
-                    image: image_url('new-logo.png')
+                    image: image_url('new-logo.png'),
+                    image: {
+                      type: 'image/jpg',
+                      width: '600',
+                      height: '315'
+                    }
                   }
   end
 end

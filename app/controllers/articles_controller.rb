@@ -17,6 +17,7 @@ class ArticlesController < BaseController
                     url:  article_url(@article),
                     image: URI.join(request.url, @article.image.url(:medium)),
                     image: {
+                      type: 'image/jpg',
                       width: "300",
                       height: "300"
                     }

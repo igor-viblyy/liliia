@@ -16,6 +16,7 @@ class EventsController < BaseController
                     url:  event_url(@event),
                     image: URI.join(request.url, @event.image.url(:medium)),
                     image: {
+                      type: 'image/jpg',
                       width: "300",
                       height: "300"
                     }

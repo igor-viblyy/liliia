@@ -16,6 +16,7 @@ class BlogsController < BaseController
                     url:  blog_url(@blog),
                     image: URI.join(request.url, @blog.image.url(:medium)),
                     image: {
+                      type: 'image/jpg',
                       width: "300",
                       height: "300"
                     }
