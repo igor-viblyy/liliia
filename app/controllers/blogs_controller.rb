@@ -14,7 +14,7 @@ class BlogsController < BaseController
                     description: @blog.body.html_safe,
                     type: 'website',
                     url:  blog_url(@blog),
-                    image: image_url(@blog.image.url(:blog))
+                    image: URI.join(request.url, @blog.image.url(:medium))
                   }
   end
 
