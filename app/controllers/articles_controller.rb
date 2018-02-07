@@ -17,11 +17,6 @@ class ArticlesController < BaseController
                     description: @article.body.html_safe,
                     # image: URI.join(request.url, @article.image.url),
                     image: @article.image.path,
-                    image: {
-                      type: 'image/jpg',
-                      width: "300",
-                      height: "300"
-                    }
                   }
   end
 
