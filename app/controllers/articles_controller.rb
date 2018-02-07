@@ -11,10 +11,10 @@ class ArticlesController < BaseController
                   site: 'Лілія',
                   description: @article.body.html_safe,
                   og: {
+                    url:  article_url(@article),
+                    type: 'website',
                     title: @article.title,
                     description: @article.body.html_safe,
-                    type: 'website',
-                    url:  article_url(@article),
                     image: URI.join(request.url, @article.image.url),
                     image: {
                       type: 'image/jpg',
