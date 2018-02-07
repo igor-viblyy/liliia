@@ -18,7 +18,7 @@
 class Blog < ApplicationRecord
   extend FriendlyId
 
-  has_attached_file :image, styles: { medium: '300x300>', thumb: "100x100>", blog: "294x190>" }, default_url: "/images/:style/missing.png"
+  has_attached_file :image, styles: { medium: '300x300>', thumb: "100x100>", blog: "294x190>" }, convert_options: { medium: "-quality 60 -interlace Plane", blog: "-quality 60 -interlace Plane" }
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
   belongs_to :author
