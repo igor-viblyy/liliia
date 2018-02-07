@@ -15,7 +15,7 @@ class ArticlesController < BaseController
                     description: @article.body.html_safe,
                     type: 'website',
                     url:  article_url(@article),
-                    image: URI.join(request.url, @article.image.url(:medium)))
+                    image: URI.join(request.url, @article.image.url(:medium))
                   }
   end
 
