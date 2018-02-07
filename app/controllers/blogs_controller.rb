@@ -15,11 +15,6 @@ class BlogsController < BaseController
                     type: 'website',
                     url:  blog_url(@blog),
                     image: URI.join(request.url, @blog.image.url),
-                    image: {
-                      type: 'image/jpg',
-                      width: "300",
-                      height: "300"
-                    }
                   }
   end
 
