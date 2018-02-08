@@ -7,6 +7,6 @@
       div
         = @article.body.html_safe
       div
-        = social_share_button_tag(@article.title, url: article_url(@article), desc: truncate_html(@article.body, length: 60), image: image_path(@article.image.url))
+        = social_share_button_tag(@article.title, url: article_url(@article), desc: truncate_html(@article.body, length: 60), image: asset_url(@article.image.url))
 
       = render 'disqus'
