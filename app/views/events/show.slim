@@ -9,3 +9,7 @@
           = l(@event.date, format: :long)
       .row
         p=@event.body.html_safe
+
+      .row
+        div
+          = social_share_button_tag(@event.title, url: article_url(@event), desc: truncate_html(@event.body, length: 60), image: asset_url(@event.image.url, host: 'liliia.com.ua'))

@@ -7,4 +7,7 @@
       div
         = @blog.body.html_safe
 
+      div
+        = social_share_button_tag(@blog.title, url: blog_url(@blog), desc: truncate_html(@blog.body, length: 60), image: asset_url(@blog.image.url, host: 'liliia.com.ua'))
+
       = render 'disqus'
