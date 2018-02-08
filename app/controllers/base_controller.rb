@@ -17,11 +17,11 @@ class BaseController < ApplicationController
                   site: 'Лілія',
                   description: 'Інтернет-журнал про здоровя та життя Лілія',
                   og: {
+                    url:  "http://liliia.com.ua",
+                    type: 'website',
                     title: 'Лілія',
                     description: 'Інтернет-журнал про здоровя та життя Лілія',
-                    type: 'website',
-                    url:  "http://liliia.com.ua",
-                    image: URI.join(request.url, image_path('logo-black.png'))
+                    image: URI.join(request.url, image_url('logo.png'))
                   }
   end
 end

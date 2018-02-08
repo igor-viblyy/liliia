@@ -10,10 +10,10 @@ class EventsController < BaseController
                   site: 'Лілія',
                   description: @event.body.html_safe,
                   og: {
+                    url:  event_url(@event),
+                    type: 'website',
                     title: @event.title,
                     description: @event.body.html_safe,
-                    type: 'website',
-                    url:  event_url(@event),
                     image: URI.join(request.url, @event.image.url)
                   }
   end

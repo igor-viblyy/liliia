@@ -10,10 +10,10 @@ class BlogsController < BaseController
                   site: 'Лілія',
                   description: @blog.body.html_safe,
                   og: {
+                    url:  blog_url(@blog),
+                    type: 'website',
                     title: @blog.title,
                     description: @blog.body.html_safe,
-                    type: 'website',
-                    url:  blog_url(@blog),
                     image: URI.join(request.url, @blog.image.url)
                   }
   end
