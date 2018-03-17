@@ -1,7 +1,7 @@
 class BlogsController < BaseController
   before_action :set_blog, only: [:show]
   def index
-    @blogs = Blog.all.page(params[:page])
+    @blogs = Blog.all_blogs.page(params[:page])
     @adverts = Advertising.page_blog
   end
 

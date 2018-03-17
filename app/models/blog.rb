@@ -26,6 +26,7 @@ class Blog < ApplicationRecord
   validates :title, :body, presence: true
 
   scope :top_blog, ->(date) { where("created_at < ?", date).order(created_at: :desc).limit(4) }
+  scope :all_blogs, -> { order(created_at: :desc) }
 
   friendly_id :title, use: :scoped, scope: :author
 end
